@@ -1,0 +1,232 @@
+html, body {
+  background-color: #20262E;
+  color: #FFF;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+/* general header settings */
+header {
+  height: 125px;
+  width: 100%;
+  border: 1px solid #FFF;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+header #header-logo {
+  height: 100%;
+  width: 125px;
+  background-color: blue;
+}
+
+/* main-nav specific */
+header nav#main-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.main-nav-link {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  cursor: pointer;
+  justify-content: center;
+  transition: border ease 0.125s;
+}
+
+.main-nav-link.active {
+  border-bottom: 10px solid #fff;
+  margin-top: 10px;
+}
+
+.main-nav-link:hover {
+  border-bottom: 10px solid #fff;
+  margin-top: 10px;
+  transition: all ease 0.125s;
+}
+
+.main-nav-link:last-child {
+  margin-right: 0;
+}
+
+/* admin links */
+header #admin-links {
+  position: absolute;
+  height: 100%;
+  width: 235px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  left: 100%;
+  transition: left linear 0.125s;
+}
+
+header #admin-links.shown {
+  left: calc(100% - 235px);
+  transition: left linear 0.125s;
+}
+
+header #admin-links #show-admin-links {
+  position: absolute;
+  left: -50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform linear 0.375s;
+}
+
+header #admin-links #show-admin-links.rotate {
+  transform: rotate(180deg);
+  transition: transform linear 0.375s;
+}
+
+header #admin-links #show-admin-links i {
+  font-size: 200%;
+}
+
+@keyframes bounce-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  50% {
+    transform: translate3d(-25%, 0, 0);
+  }
+  
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounce-right {
+  0% {
+    transform: rotate(180deg) translate3d(0, 0, 0);
+  }
+  
+  50% {
+    transform: rotate(180deg) translate3d(-25%, 0, 0);
+  }
+  
+  100% {
+    transform: rotate(180deg) translate3d(0, 0, 0);
+  }
+}
+
+header #admin-links #show-admin-links:hover {
+  cursor: pointer;
+  animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: bounce-left;
+  animation-iteration-count: infinite;
+}
+
+header #admin-links #show-admin-links.rotate:hover {
+  cursor: pointer;
+  animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: bounce-right;
+}
+
+header #admin-links .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 20px;
+  height: 100%;
+}
+
+/* general footer settings */
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 75px;
+  width: 100%;
+  border: 1px solid #FFF;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  text-transform: uppercase;
+  font-style: italic;
+  margin: 0;
+}
+
+/* page container settings */
+section#pages {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+/* individual page settings */
+#pages .page {
+  margin: 20px;
+  left: 100%;
+  display: flex;
+}
+
+#pages .page.active {
+  left: 0;
+}
+
+/* page animation keyframes */
+@keyframes slide-page-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-page-out {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+/* page animation styles */
+.animate .slide-page-in {
+  animation-duration: 0.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  position: absolute;
+  top: 125px;
+  animation-name: slide-page-in;
+}
+
+.animate .slide-page-out {
+  animation-duration: 0.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: slide-page-out;
+}
