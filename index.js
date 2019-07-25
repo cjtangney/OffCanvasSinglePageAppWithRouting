@@ -11,7 +11,7 @@ app.get('/', (response) => {
 // routing for pages is handled by the folder name
 app.get('/pages/:page', (request, response) => {
   const page = request.params['page'];
-  response.sendFile(`${__dirname}/src/pages/${page}/index.js`);
+  response.sendFile(`${__dirname}/pages/${page}/index.js`);
 })
 
 app.listen(3000, () => {
