@@ -5,59 +5,10 @@
 
     <!-- Google Material Icon Font -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="/js/app.js" type="module"></script>
   </head>
   <body>
-    <header>
-      <div id="header-logo"></div>
-      <nav id="main-nav">
-        <div id="page-1-btn" class="main-nav-link">LINK 1</div>
-        <div id="page-2-btn" class="main-nav-link">LINK 2</div>
-        <div id="page-3-btn" class="main-nav-link">LINK 3</div>
-      </nav>
-      <div id="admin-links">
-        <div id="show-admin-links" title="Administration">
-          <i class="material-icons">arrow_left</i>
-        </div>
-        <div class="content">
-          <div id="admin-btn" class="main-nav-link">
-            ADMIN LINK
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- IDEALLY THIS SECTION OF THE APPLICATION WOULD BE ROUTED. -->
-    <!-- THIS WOULD ENABLE PARTIALS AND THE USE OF BROSWER HISTORY. -->
-    <section id="pages" class="animate">
-      <div id="logged-out" class="page active scene-element scene-element--fade-in-up">
-        <form id="login" class="measure center">
-          <fieldset class="ba b--transparent ph0 mh0">
-            <legend class="f4 fw6 ph0 mh0">Sign In</legend>
-            <div class="mt3">
-              <label class="db fw6 lh-copy f6" for="email-address">Email</label>
-              <input class="pa2 input-reset ba b--white bg-transparent white w-100" type="email" name="email-address" id="email-address">
-            </div>
-            <div class="mv3">
-              <label class="db fw6 lh-copy f6" for="password">Password</label>
-              <input class="b pa2 input-reset ba b--white bg-transparent white w-100" type="password" name="password"  id="password">
-            </div>
-            <label class="pa0 ma0 lh-copy f6 pointer"><input type="checkbox"> Remember me</label>
-          </fieldset>
-          <div class="">
-            <input class="b ph3 pv2 input-reset ba b--white white bg-transparent pointer f6 dib" type="submit" value="Sign in">
-          </div>
-          <div class="lh-copy mt3">
-            <a href="#0" class="f6 link dim white db">Forgot your password?</a>
-          </div>
-        </form>
-      </div>
-    </section>
-    <!-- END PAGE ROUTER -->
-
-    <footer>
-      <p>Footer information</p>
-      <p>Copyright &#169; <span id="footer-copyright-date"></span></p>
-    </footer>
+    <div id='app-root'></div>
   </body>
-  <script src="/js/app.js" type="module"></script>
 </html>
